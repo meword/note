@@ -76,12 +76,42 @@
 单元测试集成环境
 
 +   Node.js 本身集成 require("assert")
++   karma（本节主讲）（jasmine、phantomjs）
 +   Intern 更是一个大而全的单元测试框架
 +   QUnit 一个游离在jQuery左右的测试框架
 +   Macaca 一套完整的自动化测试解决方案（国产神器来自阿里巴巴）
 
 
 
+
+
+
+
 单元测试运行流程（生命周期）
 
 ![生命周期](.\京城一灯\images\test\1.png)
+
+
+
+
+
+### 开始
+
+首先使用`npm init -y`或者自己配置`npm init`生成一个`package.json`
+
+package.json文件如下：
+
+```json
+{
+  "name": "Desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
