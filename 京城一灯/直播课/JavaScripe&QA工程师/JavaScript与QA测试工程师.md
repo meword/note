@@ -1,4 +1,4 @@
-### 测试的概念
+## 测试的概念
 
 >    一般的测试又分黑核和白核，很多传统的测试都是QA的，都是人工的去手点的手动测试
 
@@ -25,7 +25,7 @@
 
 
 
-### 单元测试
+## 单元测试
 
 单元测试的概念
 
@@ -85,21 +85,15 @@
 
 
 
-
-
 单元测试运行流程（生命周期）
 
-![生命周期](.\京城一灯\images\test\1.png)
+![生命周期](..\..\images\test\1.png)
 
 
 
 
 
-### 开始
-
-首先使用`npm init -y`或者自己配置`npm init`生成一个`package.json`
-
-package.json文件如下：
+#### 串行和并行
 
 ```json
 {
@@ -108,10 +102,43 @@ package.json文件如下：
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "test1": "npm run dev && npm run prod",
+      "test2": "npm run dev & npm run prod",
+      "dev": "echo 1",
+      "prod": "echo 2"
   },
   "keywords": [],
   "author": "",
   "license": "ISC"
 }
 ```
+
+在`package.json`中有一个`script`对象，对像内的属性可以通过`npm run`来执行，当然`npm`也有些自带的属性可以不用通过`npm run`来执行。（例：`npm install`、`npm uninstall`、`npm test`等）
+
+`npm run`运行有分**串行**和**并行**
+
+串行：串行也就是执行完了一条语句，再去执行下一条语句。比如对上面的`package.json`运行`npm run test1`，那么就会先运行`npm run dev`，等`npm run dev`执行完毕之后，再去执行`npm run prod`。假如串行之中某条语句报错了，那么将会终止语句的执行
+
+并行：并行就是将所有语句同时执行。比如对上面的`package.json`运行`npm run test2`，那么`npm run dev`和`npm run prod`这两条语句就会同时执行。并行之中互不干涉，并不会因为某条语句报错而影响其他语句。
+
+
+
+#### 寻找规则
+
+```json
+{
+  "name": "Desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "test": "karma init"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+当我们调用`npm run test`的时候，首先在当前文件夹的`node_modules`中的`.bin`文件夹里面寻找对应的文件执行，假如在当前文件夹的`node_modules`中的`.bin`文件夹里面没找到，那么会在全局中查找并执行，当在全局中也没找到的话，则报错
+
