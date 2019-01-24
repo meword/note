@@ -286,20 +286,13 @@ const ajax3 = () =>
 const mergePromise = (ajaxArray) =>{
 	//1,2,3 done [1,2,3]
 	//【代码书写处】
-    return new Promise((resolve, reject) => {
-		let arr = [];
-		ajaxArray[0]().then(data => {
-			arr.push(data);
-		}).then(data => {
-			return ajaxArray[1]();
-		}).then(data => {
-			arr.push(data);
-			return ajaxArray[2]();
-		}).then(data => {
-			arr.push(data);
-			resolve(arr)
-		})
-	})
+    let arr = [];
+	return (async () => {
+		for(const item of ajaxArray) {
+			arr.push(await item());
+		}
+		return arr;
+	})();
 }
 
 mergePromise([ajax1, ajax2, ajax3]).then(data => {
