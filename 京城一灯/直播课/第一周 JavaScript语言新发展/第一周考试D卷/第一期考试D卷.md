@@ -203,6 +203,16 @@ xiaowang.sell()
 
 6.请写出你了解的ES6元编程。（10分）
 
+
+
+元编程有什么用？
+
++ 反射能让你的代码书写起来更加可控
++ proxy 能让你实现代理
++ Symbol 可以让你在遍历的时候执行一些操作
+
+
+
 第一个元编程：
 
 ```javascript
@@ -283,16 +293,33 @@ const ajax3 = () =>
 		return 3;
 	});
 
+/* 第一种解决方式 */
 const mergePromise = (ajaxArray) =>{
 	//1,2,3 done [1,2,3]
 	//【代码书写处】
-    let arr = [];
 	return (async () => {
+        let data = [];
 		for(const item of ajaxArray) {
 			arr.push(await item());
 		}
-		return arr;
+		return data;
 	})();
+}
+
+/* 第二种方式 */
+// 由于没往 resolve里传值，所以这种拉平的方式无效
+const mergePromise = (ajaxArray) => {
+    //1,2,3 done [1,2,3]
+	//【代码书写处】
+    return (async () => {
+        let data = [];
+        while(ajaxArray[0]) {
+            await ajaxArray[0].then(res => {
+                data.push(res);
+                ajaxArray.shift();
+            })
+        }
+    })();
 }
 
 mergePromise([ajax1, ajax2, ajax3]).then(data => {
@@ -305,6 +332,19 @@ mergePromise([ajax1, ajax2, ajax3]).then(data => {
 
 
 8.请问点击会有反应么？为什么？能解决么？（5分）
+
+不会有反应，因为`while(true)`堵塞了整个同步线程
+
+解决方式：
+
++ webwork开启多线程
++ 当不支持 webwork 的时候，使用 `concurrent.thread.js`来实现多线程（[实现地址](http://www.cnblogs.com/woodk/articles/5199536.html)）
+
+扩展：
+
+js为什么是单线程的？
+
++ 因为 js 一开始就是为了处理 dom 而开发的，假如 js 是多线程的，对同样一个东西进行操作，比如删除一个a元素和往a元素里面添加b元素，那么就挂彩了
 
 ```javascript
 $('#test').click(function(argument) {
@@ -332,6 +372,11 @@ while (true) {
 
 10.请写出如下输出值，并解释为什么。(12分)
 
+用处：
+
++ 制作只能下拉列表
++ 级联菜单
+
 ```javascript
 // js模拟指针移动
 var s = [];
@@ -347,7 +392,7 @@ for (var i = 0; i < 3; i++) {
 	arr.push(pusher);
  	arr = tmp;
 }
-console.log(s[0])
+console.log(s[0]);
 ```
 
 
