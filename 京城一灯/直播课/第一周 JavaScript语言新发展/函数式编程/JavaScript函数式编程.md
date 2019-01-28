@@ -223,6 +223,25 @@ const randIter = rand()
 randIter.next() // 每个执行都给出一个随机值，表达式按需求值。
 ```
 
+``` javascript
+// 拿ajax来做示例
+function ajax() {
+    if (window.XMLHttpRequest) {
+        ajax = function name() {
+            return new XMLHttpRequest()
+        }
+    } else {
+        ajax = function name() {
+            return new ActiveXObject('Microsoft.XMLHTTP');
+        }
+    }
+}
+
+// 此时的ajax函数调用了一次之后，就不需要再经过判断，直接能获取到request的对象了
+```
+
+
+
 
 
 
@@ -345,6 +364,47 @@ return continue
 >   死循环是堵死同步栈 
 
 >   堆栈溢出是一点一点一直往堆栈加
+
+
+
+
+
+#### 偏应用函数
+
+一个函数通过预先填充原始的部分创建一个新函数，这个函数内缓存了填充的原始部分的值
+
+例：bind(this, 参数)
+
+> 柯里化其实就是偏函数的应用
+
+
+
+
+
+### 流行的几大函数式编程库
+
++ Rxjs（必学）
++ cyclejs
++ loadshjs（必学）、lazy(惰性求值)
++ underscorejs（最适合读源码上手）
++ ramdajs
+
+
+
+#### Rxjs
+
+Rxjs从诞生以来一直都不温不火，但它函数响应式编程(Functional Reactive Programming，FRP)的理念非常先进，虽然或许对大部分应用环境来说，外部输入事件并不是太频繁，并不需要引入一个如此庞大的FRP体系，但我们也可以了解一下它有哪些优秀的特性
+
+在 Rxjs中，所有的外部输入（用户输入、网络请求等等）都被事做一种【事件流】：
+
+用户点击了按钮-->网络请求成功-->用户键盘输入—>某个定时时间发生，这种事件特别适合处理游戏，上上下下上上下下，举个最简单的例子，下面这段代码会监听点击事件，每 2 次店家事件产生一次事件响应：
+
+``` javascript
+var clicks = Rx.Observable
+	.fromEvent(document, 'click')
+	.bufferCount(2)
+	.subscribe(x => console.log(x));	// 打印出前两次点击事件
+```
 
 
 
