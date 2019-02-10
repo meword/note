@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="/stylesheets/index.css">
+<script src="/scripts/index.js"></script>
+{% endblock %}
+
+
+{% block content %}
+<form>
+	<div class="form-group">
+		<label for="exampleInputEmail1">书名：</label>
+		<input type="email" class="form-control" id="bookname" placeholder="Email">
+	</div>
+	<button type="submit" class="btn btn-info" id="submitBtn">提交</button>
+</form>
+
+
+<table class="table table-bordered" style="margin-top: 20px;">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>书名</th>
+		</tr>
+	</thead>
+	<tbody id="list">
+		{% for item in dataList.list %}
+		<tr>
+			<td>{{ item.id }}</td>
+			<td>{{ item.name }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

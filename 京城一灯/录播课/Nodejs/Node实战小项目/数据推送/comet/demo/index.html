@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<h1>测试</h1>
+</body>
+
+</html>
+
+<script>
+	// jquery的ajax请求
+	// 当用了jquery的方式，会等待到data.php所有的输出都出来才获取到数据
+	/* $.ajax({
+		url: 'data.php',
+		dataType: 'json',
+		success: (data) => {
+			console.log(data);
+		}
+	}) */
+
+	// 原生ajax请求（普通接收）
+	// 使用了原生的请求，当状态为3的时候，我们打印数据，就能得到数据流
+	/* var getXmlHttpRequest = function() {
+		if (window.XMLHttpRequest) {
+			// 主流浏览器提供了 XMLHttpRequest 对象
+			return new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			// 低版本的 iE 浏览器没有提供 XMLHttpRequest 对象
+			// 所以必须使用 IE 浏览器的特定实现 ActiveXObject
+			return new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+	var xhr = getXmlHttpRequest();
+	xhr.onreadystatechange = function() {
+		console.log(xhr.readyState);
+		if (xhr.readyState === 3 && xhr.status === 200) {
+			// 获取成功后执行操作
+			// 数据在 xhr.responseText
+			console.log(xhr.responseText);
+		}
+	};
+	xhr.open('get', "data.php", true);
+	xhr.send(""); */
+
+
+	// 前端轮询实现数据流
+	function conn() {
+		$.ajax({
+			url: 'data.php',
+			dataType: 'json',
+			success: (data) => {
+				console.log(data);
+				conn();
+			}
+		})
+	}
+	conn();
+</script>

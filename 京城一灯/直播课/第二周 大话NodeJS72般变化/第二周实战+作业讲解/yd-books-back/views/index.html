@@ -1,0 +1,17 @@
+{% extends './layout.html' %}
+
+{% block title %}一灯新闻系统{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/index.css">
+{% endblock %}
+
+{% block content %}
+    <div id="app"></div>
+    {% include "../components/news/list.html" %} 
+{% endblock %}
+
+{% block scripts %}
+    <script src="/scripts/index.js"></script>
+{% endblock %}
+

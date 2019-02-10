@@ -1,0 +1,16 @@
+{% extends './layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block head %}
+	<link rel="stylesheet" href="stylesheet/index.css">
+{% endblock %}
+
+{% block content %}
+	{{ content }}
+	{% for item in data -%}
+		<h1>{{ item }}</h1>
+	{%- endfor %}
+{% endblock %}
