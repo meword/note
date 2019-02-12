@@ -1,0 +1,32 @@
+{% extends './layout.html' %}
+
+{% block title %}🍊新增新闻{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/styles/common.css">
+{% endblock %}
+
+{% block content %}
+<div id="app"></div>
+{% include "../components/news/add.html" %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.js"></script>
+    <script type="module">
+        console.log("我支持module");
+        import("/scripts/add.js").then((_)=>{
+            const create = new _.default;
+            create.fn();
+        });
+    </script>
+    <script type="nomodule" src="https://cdn.staticfile.org/systemjs/3.0.0/system.js"></script>
+    <script type="nomodule">
+        System.import('/scripts/add-bundle.js').then((_)=>{
+            const create = new _.default;
+            create.fn();
+        });
+    </script>
+
+    
+{% endblock %}

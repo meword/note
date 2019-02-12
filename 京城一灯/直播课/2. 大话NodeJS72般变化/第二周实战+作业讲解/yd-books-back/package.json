@@ -1,0 +1,33 @@
+{
+  "name": "yd-books",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development supervisor app.js",
+    "build": "babel ./assets/scripts/add.js --out-file ./assets/scripts/add-bundle.js",
+    "docs": "jsdoc ./**/*.js -d ./docs/jsdocs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "co": "^4.6.0",
+    "cross-env": "^5.2.0",
+    "koa": "^2.7.0",
+    "koa-simple-router": "^0.2.0",
+    "koa-swig": "^2.2.1",
+    "lodash": "^4.17.11",
+    "log4js": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-modules-systemjs": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "jsdoc": "^3.5.5",
+    "koa-static": "^5.0.0",
+    "node-fetch": "^2.3.0"
+  }
+}

@@ -1,0 +1,4 @@
+1.LexicalEnvironment 全局词法作用域 eval
+2.Function 创建所有函数的Scope -> LexicalEnvironment
+3.with 浏览器一旦遇到 放弃回收所有变量
+4.try会回收a catch->ex->LexicalEnvironment
