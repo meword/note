@@ -67,7 +67,7 @@ class Utils {
 
 	/**
 	 * 获取get参数
-	 * name：需要获取的键
+	 * @param {string} name 需要获取的键
 	 */
 	getQueryString(name) {
 		let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -88,6 +88,7 @@ class Utils {
 
 	/**
 	 * 获取url中的hash值
+	 * @param {string} key hash值的key属性
 	 */
 	getHashParameter(key){
 		var arr = (location.hash || "").replace(/^\#/,'').split("&");
@@ -103,7 +104,7 @@ class Utils {
 
 	/**
 	 * 范围时间代码
-	 * count：获取几天前
+	 * @param {number} count 获取几天前的日期
 	 */
 	getRangeTime(count) {
 		// 拼接时间
@@ -150,6 +151,21 @@ class Utils {
 				}
 			});
 		})
+	}
+
+	/**
+	 * 有效防止用户多次点击
+	 * @param {function} fn 触发函数
+	 * @param {number} wait 间隔时间
+	 */
+	throttle(fn, wait) {
+		let timer;
+		return function(...args) {
+			if (!timer) {
+				timer = setTimeout(() => {timer = null}, wait);
+				return fn.apply(this, args)
+			}
+		}
 	}
 }
 

@@ -1,0 +1,1 @@
+console.log('加载index成功')

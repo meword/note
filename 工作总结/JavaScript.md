@@ -2,7 +2,7 @@
 
 ## javascript
 
-<br>
+
 
 **打开新窗口并写入代码**
 ```javascript
@@ -10,21 +10,21 @@
 window.open('javascript:window.name;', data)
 ```
 
-<br>
+
 
 **开发项目获取地址绝对路径**
 ```javascript
 `${location.protocol}//${location.host}${location.pathname}`
 ```
 
-<br>
+
 
 **ip地址正则：**
 ```javascript
 /^(0|\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(0|\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(0|\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(0|\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
 ```
 
-<br>
+
 
 **字符串转代码**
 
@@ -41,7 +41,7 @@ window.open('javascript:window.name;', data)
 
 因为在新Function()中的代码评估是在局部作用域中运行，所以代码中任何被评估通过的var变量都不会自动变成全局变量，不管你在哪里执行Function()，它只能看到全局作用域。所以能很好的避免所在作用域的变量污染
 
-<br>
+
 
 **$.cookie**
 
@@ -64,12 +64,12 @@ $.cookie('the_cookie', null);
 ```
 
 
-<br><br><br>
+
 
 
 ### js常用扩展
 
-<br>
+
 
 **js正则获取get参数**
 
@@ -84,7 +84,7 @@ function getQueryString(name) {
 // 使用: getQueryString('get参数名')
 ```
 
-<br>
+
 
 
 **获取指定时间日期**
@@ -136,7 +136,7 @@ function copy(message) {
 }
 ```
 
-<br>
+
 
 
 **计算字符长度**
@@ -157,7 +157,6 @@ function getStringLength(text) {
 }
 ```
 
-<br>
 
 
 **jQuery获取元素宽度（包含小数点）**
