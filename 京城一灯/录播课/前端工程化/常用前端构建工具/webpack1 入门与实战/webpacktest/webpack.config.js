@@ -14,9 +14,18 @@ module.exports = {
 		})
 	],
 	module: {
-		loaders: [{
+		rules: [{
 			test: /\.css$/,
-			loader: 'style-loader!css-loader'
+			use: [{
+					loader: 'style-loader'
+				},
+				{
+					loader: 'css-loader',
+					options: {
+						modules: true
+					}
+				}
+			]
 		}]
 	},
 	resolve: {
