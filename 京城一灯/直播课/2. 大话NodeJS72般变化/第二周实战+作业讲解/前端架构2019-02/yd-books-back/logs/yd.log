@@ -1,0 +1,22 @@
+[2019-01-31T21:27:45.832] [ERROR] cheese - ReferenceError: indexModel is not defined
+    at /Users/yuanzhijia/Desktop/yd-books/controllers/IndexController.js:6:13
+    at dispatch (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-simple-router/index.js:186:18)
+    at Router._lookup (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-simple-router/index.js:198:12)
+    at /Users/yuanzhijia/Desktop/yd-books/node_modules/koa-simple-router/index.js:138:21
+    at dispatch (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-compose/index.js:42:32)
+    at app.use (/Users/yuanzhijia/Desktop/yd-books/middlewares/errorHandler.js:14:19)
+    at dispatch (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-compose/index.js:42:32)
+    at app.use (/Users/yuanzhijia/Desktop/yd-books/middlewares/errorHandler.js:5:23)
+    at dispatch (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-compose/index.js:42:32)
+    at serve (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-static/index.js:53:15)
+[2019-01-31T21:57:51.858] [ERROR] cheese - ReferenceError: indexModel is not defined
+    at /Users/yuanzhijia/Desktop/yd-books/controllers/IndexController.js:6:13
+    at dispatch (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-simple-router/index.js:186:18)
+    at Router._lookup (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-simple-router/index.js:198:12)
+    at /Users/yuanzhijia/Desktop/yd-books/node_modules/koa-simple-router/index.js:138:21
+    at dispatch (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-compose/index.js:42:32)
+    at app.use (/Users/yuanzhijia/Desktop/yd-books/middlewares/errorHandler.js:14:19)
+    at dispatch (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-compose/index.js:42:32)
+    at app.use (/Users/yuanzhijia/Desktop/yd-books/middlewares/errorHandler.js:5:23)
+    at dispatch (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-compose/index.js:42:32)
+    at serve (/Users/yuanzhijia/Desktop/yd-books/node_modules/koa-static/index.js:53:15)
