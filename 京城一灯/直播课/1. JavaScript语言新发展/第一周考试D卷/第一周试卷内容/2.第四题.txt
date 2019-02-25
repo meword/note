@@ -1,8 +1,0 @@
-1.yideng.__proto__==Person.prototype
-2.Person.prototype.__proto__ = Object.prototype
-3.Person.__proto__ = Function.prototype
-4.Function.prototype.__proto__ = Object.prototype
-5.Object / Number
-6.Object.__proto__ = Function.prototype
-  Function.__proto__ = Function.prototype
-7.构造函数的__proto__都指向Function的prototype
