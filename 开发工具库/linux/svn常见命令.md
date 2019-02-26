@@ -47,12 +47,3 @@ svn 检查文件修改记录
 ``` bash
 svn changelist
 ```
-
-
-
-svn 创建新的版本库
-
-``` bash
-
-```
-
