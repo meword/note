@@ -1,0 +1,36 @@
+# Host: 给服务器取的别名(配置完可以通过 ssh 别名进行登录)
+# User: 登录的用户
+# HostName: 服务器ip地址或者域名
+# IdentityFile: 私钥文件路径
+# Protocol: 协议版本号
+
+# 多主机配置
+Host gateway-produce
+HostName IP或绑定的域名
+Port 22
+Host node-produce
+HostName IP或绑定的域名
+Port 22
+
+# Host 匹配上面的配置
+Host *-produce
+User root
+IdentityFile ~/.ssh/rsa
+Protocol 2
+Compression yes
+ServerAliveInterval 60
+ServerAliveCountMax 20
+LogLevel INFO
+
+
+
+#单主机配置
+Host cm
+User root
+HostName IP
+IdentityFile ~/.ssh/rsa
+Protocol 2
+Compression yes
+ServerAliveInterval 60
+ServerAliveCountMax 20
+LogLevel INFO

@@ -1,0 +1,19 @@
+{% extends '../../common/layout.html' %}
+
+{% block title %}一灯新闻系统{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="/styles/books-list.css">
+{% endblock %}
+
+{% block navigation %}
+    {% include "../../../components/navigation/navigation.html" %} 
+{% endblock %}
+
+{% block content %}
+    {% include "../../../components/list/list.html" %} 
+{% endblock %}
+
+{% block scripts %}
+     <script src="/scripts/books-list.bundule.js"></script>
+{% endblock %}
