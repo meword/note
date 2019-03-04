@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    </div>
+
+    <!-- <script src="a.xx4455.js"></script> -->
+    <script>
+        //basket.js
+        //webpack
+        var res ={
+            "a.js":" a.xx4455.js"
+        }
+        function activePage(){
+            for(let item of res){
+                const js = localStorage[item.key];
+                //1.本地没有发请求 再发一次请求缓存
+                //2.本地存在 判断一下当前的版本号
+                //3.更新我们资源
+                if(js == item.value){
+                    eval(js)
+                }else{
+                    fetch(item.value).then(function(res){
+                        localStorage["a.js"] = "a.xx4455.js";
+                        localStorage["a.xx4455.js"] = res;
+                    })
+                }
+            }
+           
+        }
+        activePage();
+    </script>
+    <!-- a.js ->  a.xx4455.js
+    a.xx4455.js -> 代码 -->
+</body>
+</html>

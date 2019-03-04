@@ -1,0 +1,53 @@
+[2019-02-27T21:34:06.168] [ERROR] cheese - { code: 1, message: 'node-fetch和后端通讯异常', data: [] }
+[2019-02-27T21:35:36.466] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/yuanzhijia/Desktop/yd-books/dist/views/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yuanzhijia/Desktop/yd-books/dist/views/index.html' }
+[2019-02-27T21:37:40.053] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/yuanzhijia/Desktop/yd-books/dist/views/books/pages/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yuanzhijia/Desktop/yd-books/dist/views/books/pages/index.html' }
+[2019-02-27T21:38:06.966] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/yuanzhijia/Desktop/yd-books/dist/views/layout.html'
+    at Object.fs.openSync (fs.js:646:18)
+    at Object.fs.readFileSync (fs.js:551:33)
+    at Object.ret.load (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/loaders/filesystem.js:59:15)
+    at exports.Swig.parseFile (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:403:31)
+    at getParents (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:480:14)
+    at exports.Swig.precompile (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:527:19)
+    at exports.Swig.compile (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:651:16)
+    at /Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:729:27
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:511:3)
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yuanzhijia/Desktop/yd-books/dist/views/layout.html' }
+[2019-02-27T21:39:32.905] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/yuanzhijia/Desktop/yd-books/dist/views/components/common/navigation.html'
+    at Object.fs.openSync (fs.js:646:18)
+    at Object.fs.readFileSync (fs.js:551:33)
+    at Object.ret.load (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/loaders/filesystem.js:59:15)
+    at exports.Swig.compileFile (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:740:31)
+    at Object.eval [as tpl] (eval at precompile (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:537:13), <anonymous>:10:18)
+    at compiled (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:664:18)
+    at /Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:604:20
+    at /Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:735:9
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:511:3)
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yuanzhijia/Desktop/yd-books/dist/views/components/common/navigation.html' }
+[2019-02-27T22:01:54.443] [ERROR] cheese - { Error: ENOENT: no such file or directory, open '/Users/yuanzhijia/Desktop/yd-books/dist/views/books/pages/components:list/list.html'
+    at Object.fs.openSync (fs.js:646:18)
+    at Object.fs.readFileSync (fs.js:551:33)
+    at Object.ret.load (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/loaders/filesystem.js:59:15)
+    at exports.Swig.compileFile (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:740:31)
+    at Object.eval [as tpl] (eval at precompile (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:537:13), <anonymous>:15:18)
+    at compiled (/Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:664:18)
+    at /Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:604:20
+    at /Users/yuanzhijia/Desktop/yd-books/node_modules/swig-templates/lib/swig.js:735:9
+    at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:511:3)
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/yuanzhijia/Desktop/yd-books/dist/views/books/pages/components:list/list.html' }

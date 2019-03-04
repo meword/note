@@ -1,0 +1,33 @@
+1.网页的渲染流程
+1-1 获取DOM进行分层
+1-2 对每个图层节点进行样式的计算 Recalculate Style
+1-3 为每个对应的节点图形和位置 重排Layout
+1-4 对每个节点进行绘制并添加到图层位图中 Paint
+(并不是每个图层都会GPU进行参与)
+Composite Layers
+1-5 将这个位图上传至GPU 旋转、缩放、偏移、修改透明
+
+2.总结 Layout -》 Paint -》 Composite Layers
+
+3.那些元素会独立层
+根元素、position、transfrom、半透明、CSS滤镜、Video 、Overflow
+那些元素属性会让GPU参与进来呢？
+CSS3D、Video、Webgl(https://github.com/lgwebdream/gpu.js)、CSS滤镜、transfrom
+
+4.cpu代码gpu 
+相同之处：总线和外界联系、缓存体系、数字和逻辑与预算单元、计算而生
+不同之处：CPU主要负责和操作系统应用程序，GPU显示数据相关
+
+5.重排 重绘 不一定引起重排 重排一定会引起重绘
+阴影、颜色 。。paint
+
+5-1.添加或者删除元素的时候
+5-2.元素的位置发生改变
+5-3.元素的-webkit-box-sizing: border-box;不会让我们的盒子发生太多的变化
+标准盒子模型 盒子越来越大
+5-4.页面初始化
+5-5 内容变化（没有撑开盒）
+5-6 js 读取一下几个值 offset、scroll、width、getComputerStyle
+
+6.读你为什么造成重排？
+断了优化着这条路

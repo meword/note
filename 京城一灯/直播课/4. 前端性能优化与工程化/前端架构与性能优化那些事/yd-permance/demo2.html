@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS渲染性能优化</title>
+    <style>
+        .container {
+            position: relative;
+            min-width: 400px;
+        }
+
+        .ball {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75)
+        }
+
+        .ball-running {
+            animation: run-around 4s infinite;
+        }
+        /* transform: translate3d(-1560px, 0px, 0px); */
+        @keyframes run-around {
+            0%{
+                top: 0;
+                left: 0;
+            }
+            25%{
+                top: 0;
+                left: 200px;
+            }
+            50%{
+                top: 200px;
+                left: 200px;
+            }
+            75%{
+                top: 200px;
+                left: 0;
+            }
+            /* 0% {
+              transform: translate(0)
+            }
+
+            25% {
+                transform: translate(200px,0)
+            }
+
+            50% {
+                transform: translate(200px,200px)
+            }
+
+            75% {
+                transform: translate(0,200px)
+            }*/
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ball" id="ball"></div>
+    </div>
+    <script>
+        var balls = document.getElementById("ball");
+        balls.classList.add("ball");
+        balls.classList.add("ball-running");
+        var s = document.body.style;
+        //写到 不敢优化了
+        var q = balls.clientHeight;
+        //浏览器会优化
+        //拆开多写2帧
+        requestAnimationFrame(function(){
+            s.padding ="";
+            s.border = "";
+        })
+    </script>
+</body>
+
+</html>
